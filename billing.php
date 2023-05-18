@@ -28,7 +28,6 @@ if (isset($_GET['id']) && isset($_GET['roomType']) && isset($_GET['stayDuration'
 <body>
     <a href="index.php"><h1>Billing</h1></a>
     <h2>Guest Information</h2>
-    <h2>Guest Information</h2>
     <p>Guest ID: <?php echo $guestData['gen_id']; ?></p>
     <p>Name: <?= $guestData['last_name'] ?>, <?= $guestData['first_name'] ?> <?= $guestData['mid_name'] ?></p>
     <p>Membership: <?php echo $guestData['type'] == 1 ? 'Member' : 'Non-Member'; ?></p>
