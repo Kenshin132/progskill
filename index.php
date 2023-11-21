@@ -1,6 +1,8 @@
 <?php
 require_once("dbConnection.php");
 
+//search
+
 if (isset($_POST['search'])) {
     $searchTerm = mysqli_real_escape_string($mysqli, $_POST['search_term']);
     $query = "SELECT * FROM guests WHERE first_name LIKE '%$searchTerm%' OR mid_name LIKE '%$searchTerm%' OR last_name LIKE '%$searchTerm%' OR gen_id LIKE '%$searchTerm%'";
@@ -38,6 +40,8 @@ $rooms = mysqli_query($mysqli, "SELECT * FROM `rooms`");
         </thead>
         <tbody>
         <?php
+
+        //Generated ID
         while($res = mysqli_fetch_assoc($result)){
             echo "<tr>";
             echo "<td>".$res['last_name'].", ".$res['first_name']." ".$res['mid_name']." <br> ".date('F j, Y', strtotime($res['dor']))."</td>";
